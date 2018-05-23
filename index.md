@@ -43,7 +43,7 @@ syntax is wrote in [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus–Naur_
     * [comments](#comments)
     * [reserved keywords](#reserved-keywords)
     * [operators](#operators)
-        * [unary operators](#unary-operatos)
+        * [unary operators](#unary-operators)
         * [binary operators](#binary-operators)
         * [ternary operator](#ternary-operator)
         * [assignment operators](#assignment-operators)
