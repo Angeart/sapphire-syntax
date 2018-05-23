@@ -241,7 +241,7 @@ exist only **?:**
 |fix|immutable|
 
 ### builtin types
-|||
+|type name or syntax||
 |-|-:|
 |(\<arguments\>)->\<return-type\>|function|
 |bool|boolean|
@@ -261,7 +261,7 @@ exist only **?:**
 |ustring|utf8 string|
 
 ### builtin structure types
-|||
+|type syntax||
 |-|-:|
 |[\<type\>]|types array|
 |(\<type01\>,\<type02\>,...)|tuple|
