@@ -49,6 +49,7 @@ syntax is wrote in [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus–Naur_
         * [assignment operators](#assignment-operators)
         * [access operators](#access-operators)
         * [call operator](#call-operator)
+    * [string and character literal](#string-and-character-literal)
 
 # Lexical elements
 
