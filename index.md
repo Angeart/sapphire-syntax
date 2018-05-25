@@ -235,15 +235,17 @@ exist only **?:**
 
 
 ### variable attributes
+
 |attribute name|effect|
-|-|-:|
+|---|---:|
 |let|mutable|
 |lazy|lazy evaluation and mutable|
 |fix|immutable|
 
 ### builtin types
+
 |type name or syntax||
-|-|-:|
+|---|---:|
 |(\<arguments\>)->\<return-type\>|function|
 |bool|boolean|
 |byte|signed 8bit integer|
