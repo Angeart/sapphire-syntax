@@ -255,10 +255,8 @@ exist only **?:**
 |ulong|unsigned 64bit integer|
 |float|32bit floating point|
 |real|64bit floating point|
-|char|8bit single character|
-|utf8|unicode single character<br/>(not count combining character)|
-|string|multibyte string|
-|ustring|utf8 string|
+|char|utf8 character|
+|string|utf8 string|
 
 ### builtin structure types
 |type syntax||
@@ -283,4 +281,11 @@ fix fixed_value : int = 7; //read only
 
 //if "normal_variable" is changed to 5 when evaluating the number of variables, the result is 50.
 lazy lazy_value : byte = normal_variable * 10;
+```
+
+## string and character literal
+### syntax
+```ABNF
+<character-literal> = "\'" <unicode-char> "\'"
+<string-literal> = "\"" *<unicode-char> "\""
 ```
