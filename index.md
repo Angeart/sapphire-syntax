@@ -262,8 +262,9 @@ exist only **?:**
 |string|utf8 string|
 
 ### builtin structure types
+
 |type syntax||
-|-|-:|
+|---|---:|
 |[\<type\>]|types array|
 |(\<type01\>,\<type02\>,...)|tuple|
 
