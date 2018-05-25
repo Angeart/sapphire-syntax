@@ -290,3 +290,9 @@ lazy lazy_value : byte = normal_variable * 10;
 <character-literal> = "\'" <unicode-char> "\'"
 <string-literal> = "\"" *<unicode-char> "\""
 ```
+
+## numeric literal
+### syntax
+```ABNF
+<integer-literal> = *<DIGIT> ; use cast,if you want to set type of smaller or bigger than int
+```
