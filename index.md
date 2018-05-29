@@ -303,7 +303,11 @@ lazy lazy_value : byte = normal_variable * 10;
 
 ### syntax
 ```ABNF
-<function> = 
+<forward-declare-function> = <identity> "(" <type-attribute> *("," <type-attribute>) ")" "->" <type-attribute>
+<function-body> = [<identity>] "(" <type-attribute> *("," <type-attribute>) ")" "->" <type-attribute> <function-block>
+<function-block> = 1*(<function-pattern>) / <function-scope>
+<function-pattern> = [<pattern>] <function-scope>
+<function-scope> = "{" *(<expression>) "}"
 ```
 
 ### example
@@ -312,7 +316,7 @@ lazy lazy_value : byte = normal_variable * 10;
 add (int, int) -> int;
 
 // body declaration
-add (let left : int, let right : int) => int {
+add (let left : int, let right : int) -> int {
     return left + right;
 }
 
@@ -328,10 +332,10 @@ let add = (let left, let right) {
 
 // pattern
 let add = (let left, let right)
-|> [left == 0 && right == 0] {
+|> left == 0 && right == 0 {
     return 0;
 }
-|> [left == INF && right == INF] {
+|> left == INF && right == INF {
     return INF;
 }
 ```
