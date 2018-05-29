@@ -49,7 +49,9 @@ syntax is wrote in [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus–Naur_
         * [assignment operators](#assignment-operators)
         * [access operators](#access-operators)
         * [call operator](#call-operator)
+    * [variable](#variable)
     * [string and character literal](#string-and-character-literal)
+    * [numeric literal](#numeric-literal)
 
 # Lexical elements
 
@@ -228,9 +230,6 @@ exist only **?:**
 ```
 
 
-## literals
-
-
 ## variable
 
 
@@ -298,4 +297,41 @@ lazy lazy_value : byte = normal_variable * 10;
 ### syntax
 ```ABNF
 <integer-literal> = *<DIGIT> ; use cast,if you want to set type of smaller or bigger than int
+```
+
+# function
+
+### syntax
+```ABNF
+<function> = 
+```
+
+### example
+```
+// forward declaration
+add (int, int) -> int;
+
+// body declaration
+add (let left : int, let right : int) => int {
+    return left + right;
+}
+
+// lambda
+let add = (let left : int, let right : int) -> int {
+    return left + right;
+}
+
+// generic
+let add = (let left, let right) {
+    return left + right;
+}
+
+// pattern
+let add = (let left, let right)
+|> [left == 0 && right == 0] {
+    return 0;
+}
+|> [left == INF && right == INF] {
+    return INF;
+}
 ```
