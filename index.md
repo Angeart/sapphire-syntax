@@ -63,8 +63,8 @@ syntax is wrote in [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus–Naur_
 ### syntax
 ```ABNF
 <comments> = <line-comment> / <block-comment>
-<line-comment> = "//" *(<unicode-char> <eol>)
-<block-comment> = "/*" *(<unicode-char> <eol>) "*/"
+<line-comment> = "//" *(<unicode-char>) <eol>
+<block-comment> = "/*" *(*(<unicode-char>) <eol>) "*/"
 ```
 ### example
 ```
