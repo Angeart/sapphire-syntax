@@ -272,17 +272,17 @@ exist only **?:**
 ```ABNF
 <variable> = (<variable-attribute>  <variable-declaration> *("," <variable-declaration>) ";") / (<omit-variable> *("," <omit-variable>) ";")
 <variable-declaration> = <typed-variable> / <deduced-variable>
-<typed-variable> = <identify> ":" <type-attribute> [":=" <initializer>]
-<deduced-variable> = <identify> ":=" <initializer>
+<typed-variable> = <identify> ":" <type-attribute> ["=" <initializer>]
+<deduced-variable> = <identify> "=" <initializer>
 <omit-variable> = <identify> ":=" <initializer>
 ```
 
 ### example
 ```
-let normal_variable : byte := 10; //mutable byte value
+let normal_variable : byte = 10; //mutable byte value
 let m0 : int, m1 : short; //multiple declaration
-let deduced_variable := "message"; //deduce to string
-const const_value : int := 7; //read only
+let deduced_variable = "message"; //deduce to string
+const const_value : int = 7; //read only
 omit_variable := 5; //deduce to let int
 
 //if "normal_variable" is changed to 5 when evaluating the number of variables, the result is 50.
