@@ -63,8 +63,8 @@ syntax is wrote in [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus–Naur_
 ### syntax
 ```ABNF
 <comments> = <line-comment> / <block-comment>
-<line-comment> = "//" *(<unicode-char> <eol>)
-<block-comment> = "/*" *(<unicode-char> <eol>) "*/"
+<line-comment> = "//" *(<unicode-char>) <eol>
+<block-comment> = "/*" *(*(<unicode-char>) <eol>) "*/"
 ```
 ### example
 ```
@@ -240,7 +240,7 @@ exist only **?:**
 |---|---:|
 |let|mutable|
 |lazy|lazy evaluation and mutable|
-|fix|immutable|
+|const|immutable|
 
 ### builtin types
 
@@ -270,10 +270,11 @@ exist only **?:**
 
 ### syntax
 ```ABNF
-<variable> = <variable-attribute>  <variable-declaration> *("," <variable-declaration>) ";"
+<variable> = (<variable-attribute>  <variable-declaration> *("," <variable-declaration>) ";") / (<omit-variable> *("," <omit-variable>) ";")
 <variable-declaration> = <typed-variable> / <deduced-variable>
 <typed-variable> = <identify> ":" <type-attribute> ["=" <initializer>]
 <deduced-variable> = <identify> "=" <initializer>
+<omit-variable> = <identify> ":=" <initializer>
 ```
 
 ### example
@@ -281,7 +282,8 @@ exist only **?:**
 let normal_variable : byte = 10; //mutable byte value
 let m0 : int, m1 : short; //multiple declaration
 let deduced_variable = "message"; //deduce to string
-fix fixed_value : int = 7; //read only
+const const_value : int = 7; //read only
+omit_variable := 5; //deduce to let int
 
 //if "normal_variable" is changed to 5 when evaluating the number of variables, the result is 50.
 lazy lazy_value : byte = normal_variable * 10;
