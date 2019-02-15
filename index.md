@@ -38,6 +38,7 @@ syntax is wrote in [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus–Naur_
 
 # Outline
 
+* [Control](#Control-statements)
 * [Lexical elements](#Lexical-elements)
     * [identify](#identify)
     * [comments](#comments)
@@ -52,6 +53,17 @@ syntax is wrote in [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus–Naur_
     * [variable](#variable)
     * [string and character literal](#string-and-character-literal)
     * [numeric literal](#numeric-literal)
+
+# Control statements
+
+## import
+### syntax
+```ABNF
+<import> = "import" <module-name>
+<import-func> = "import" <function-names> "of" <module-name>
+
+<function-names> = <function-name> *("," <function-name>)
+```
 
 # Lexical elements
 
